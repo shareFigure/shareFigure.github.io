@@ -34,13 +34,44 @@
 	<div class="container">
 		<center>
 			<img src="assets/images/fig1.png" alt="">
-			<h3>Fig 1</h3>
+			<h4>Fig 1</h4>
 			<br/>
 			<br/>
 			<br/>
 			<img src="assets/images/fig6.png" alt="">
-			<h3>Fig 2</h3>
+			<h4>Fig 2</h4>
 		</center>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<h3>Rebuttal (Minor)</h3>
+		<p><b>Reviewer #1:</b> Add examples of larger meshes to show the advantage of parallelized algorithm.
+			</br><b>R:</b> Thanks for your advice. we will make more extensive experiments on high-resolution 3D models (e.g., 100K faces).
+		</p>
+		<p><b>Reviewer #2:</b> The boundary handling can be mentioned. Add more sources of VD usage to back it up. Delaunay triangulations of more complicated shapes. Add paper "Navigating Intrinsic Delaunay Triangulations" as an example of applications of IDT.
+			</br><b>R:</b> Sure. Will do as you suggested. 
+		</p>
+		<p><b>Reviewer #2:</b> Why it is “reasonable” to determinate owner-less region simply for Type-#1 CVD cell.
+			</br><b>R:</b> Thanks for your question. We explained this in Q2. The explanation can also be found in [Yan 2014](http://archive.ymsc.tsinghua.edu.cn/pacm_download/38/280-2014_TVCG_LRVD.pdf). We shall clearly state this in the revision.
+		</p>
+		<p><b>Reviewer #2:</b> Figure 1 needs more elaboration. Elaboration on the exactly meaning of optimizing sites.
+			</br><b>R:</b> Thanks. We will proof-read this paper to improve the writing.
+		</p>
+		<p><b>Reviewer #2:</b> What is the min on the color bar of Figure 6?
+			</br><b>R:</b> We use the color bar to visualize the relative error of straight-line distance against geodesic distance: (d_geodesic- d_straight)/d_geodesic, which ranges from 0 to 1. We shall modify “min” to 0, and “max” to 1 in the revision. Thanks.
+		</p>
+		<p><b>Reviewer #3:</b> Problems in parallel implementation.
+			</br><b>R:</b> We agree that there is a potential to further improve the parallel implementation. We will follow your advice to tune the text and optimize the implementation. 
+		</p>
+		<p><b>Reviewer #4:</b> Explicitly mention the bad effect of inconsistencies in application. Explain the concept of owner-less regions. 
+			</br><b>R:</b> Thanks. We will re-organize the text to clarify/illustrate this. At the same time, we will give out explicit conception of “own-less region” with an intuitive figure.
+		</p>
+		<p><b>Reviewer #4:</b> Why not distinguish type #0 and type #2 CVD cells by check the convexity on projected 2D shape? & Isn't it just enough to partition the projected 2D polygon?
+			</br><b>R:</b> A very good question. Some explanation can be found in Q3. In fact, if a RVD cell is nearly planar, it is no problem to project it onto a plane. But the kidney shaped cells often occur near the edge of a thin shape. I understand what you mean: why not consider the re-partitioning step on the 2D parameterized domain (in fact, projection also leads to a simple parameterization result)? Our response is: a non-isometric parameterization cannot work (to guarantee that RVD is close to GVD), but an as-isometric-as-possible parameterization result is non-trivial to obtain and computationally time-consuming, especially when the local shape is highly curved. 
+		</p>
 	</div>
 </section><!--/Promo Area-->
 
